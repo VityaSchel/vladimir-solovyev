@@ -1,0 +1,162 @@
+html, body {
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#main-content {
+  height: 100vh;
+
+  #main-flex {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    #horizontal-flex {
+      display: flex;
+      justify-content: stretch;
+      height: 100%;
+
+      @media screen and (orientation:portrait) {
+        flex-direction: column;
+      }
+
+      & > * {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: filter 0.4s ease-in-out;
+        position: relative;
+
+        @media screen and (orientation:portrait) {
+          width: unset;
+        }
+
+        .bg {
+          height: 100%;
+          width: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          background-position: top;
+          transition: transform 0.2s ease-in-out;
+
+          &.scaled {
+            transform: scale(1.05);
+          }
+        }
+
+        &.grayed {
+          filter: grayscale(1);
+        }
+
+        .bottom-quote {
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+          padding: 10px;
+          color: #fff;
+          font-weight: 800;
+          text-align: center;
+          text-shadow: 0 0 5px black;
+          font-style: italic;
+          font-size: 1.2em;
+          box-sizing: border-box;
+
+          @media screen and (orientation:portrait) {
+            padding: 3vw;
+            font-size: 4vw;
+          }
+        }
+      }
+
+      #solovyev-flex > .bg {
+        background-image: url("/assets/images/solovyev.jpg");
+      }
+
+      #hitler-flex > .bg {
+        background-image: url("/assets/images/hitler.jpg");
+      }
+    }
+
+    #quote-outer {
+      height: 20vh;
+      background-color: #212121;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (orientation:portrait) {
+        height: 30vh;
+      }
+
+      #block-quote {
+        color: #fff;
+        font-style: italic;
+        font-weight: 800;
+        font-size: 1.5em;
+        margin: 0;
+        text-align: center;
+        max-width: 80%;
+
+        @media screen and (orientation:portrait) {
+          font-size: 5vw;
+        }
+      }
+
+      .flex-offset {
+        width: 0%;
+        transition: width 0.2s ease-in-out;
+
+        &.expand {
+          width: 5%;
+        }
+      }
+
+      .new-quote {
+        border-radius: 999px;
+        border: 0;
+        background-image: linear-gradient(40deg, #bc34e5, #fbca2a);
+        padding: 15px 35px;
+        font-size: 1.1em;
+        cursor: pointer;
+        color: #fff;
+        font-family: "Roboto";
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+        display: none;
+
+        @media screen and (orientation:portrait) {
+          font-size: 7vw;
+          padding: 5vw 15vw;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Roboto";
+  padding: 2%;
+  text-align: center;
+  flex-direction: column;
+
+  @media screen and (orientation:portrait) {
+    padding: 5vw;
+  }
+
+  p {
+    margin: 1vw 0;
+
+    @media screen and (orientation:portrait) {
+      font-size: 4vw;
+    }
+  }
+}
+
+@import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
