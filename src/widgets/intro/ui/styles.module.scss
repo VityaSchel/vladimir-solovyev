@@ -1,0 +1,25 @@
+@import '@/shared/styles/utils';
+
+.headline {
+  font-size: 48px;
+  overflow: clip;
+  margin: 0 0 24px 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+
+  span {
+    // animation: fly-in 120ms;
+
+    &:nth-child(1) {
+      $color1: rgba(248, 80, 50, 1);
+      $color2: rgba(190, 33, 17, 1);
+      @include text-gradient(linear-gradient(to right, $color1, $color2));
+    }
+
+    &:last-child {
+      $color1: rgba(160, 68, 255, 1);
+      $color2: rgba(106, 48, 147, 1);
+      @include text-gradient(linear-gradient(to right, $color1, $color2));
+    }
+  }
+}
