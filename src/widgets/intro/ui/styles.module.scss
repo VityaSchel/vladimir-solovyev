@@ -1,3 +1,4 @@
+@use '@/shared/styles/variables.scss' as variables;
 @import '@/shared/styles/utils';
 
 .intro {
@@ -12,6 +13,7 @@
   margin: 0 0 24px 0;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
+  width: max-content;
 
   span {
     display: inline-block;
@@ -31,6 +33,10 @@
       @include text-gradient(linear-gradient(to right, $color1, $color2));
       animation-delay: .5s;
     }
+  }
+
+  @media screen and (max-width: variables.$breakpoint-tablet) {
+    font-size: 24px; 
   }
 }
 
