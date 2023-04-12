@@ -1,6 +1,41 @@
+@use '@/shared/styles/variables.scss' as variables;
+
 .container {
   display: flex;
   flex-direction: row;
   width: 100%;
   flex: 1;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+
+  .quote {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0 0 5px black, 0 0 1px black;
+    font-style: italic;
+    font-size: 2em;
+    transition: margin-left 200ms ease-in-out;
+    width: 70%;
+    font-family: serif; // 'Montserrat', sans-serif;
+    pointer-events: none;
+
+    &.slideLeft {
+      margin-left: -50px;
+    }
+
+    &.slideRight {
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-tablet) {
+      width: 90%;
+    }
+  }
 }
