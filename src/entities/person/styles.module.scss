@@ -3,17 +3,25 @@
   filter: grayscale(0);
 }
 
+@mixin resetButton {
+  background: none;
+  border: 0;
+}
+
 .container {
+  @include resetButton;
   position: relative;
   flex: 1;
   height: 100%;
   overflow: hidden;
+  cursor: pointer;
 
   img {
     object-fit: cover;
     transform: scale(1);
     transition: transform 0.2s ease-in-out, filter 0.4s ease-in-out;
     filter: grayscale(1);
+    -webkit-user-drag: none;
   
     &.hover {
       @include activeImage;

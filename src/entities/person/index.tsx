@@ -10,11 +10,10 @@ export function Person({ image, alt, isHovered, onHover, onSelect }: {
   onSelect: () => any
 }) {
   return (
-    <div 
+    <button
       className={styles.container}
       onPointerEnter={onHover}
       onClick={onSelect}
-      tabIndex={1}
     >
       <Image
         className={cx({ [styles.hover]: isHovered })}
@@ -22,6 +21,6 @@ export function Person({ image, alt, isHovered, onHover, onSelect }: {
         alt={alt}
         fill
       />
-    </div>
+    </button>
   )
 }
