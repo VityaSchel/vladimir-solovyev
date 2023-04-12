@@ -7,6 +7,7 @@ export default function HomePage() {
     <HomepageWrapper>
       <Head>
         <title>Гитлер или Соловьев?</title>
+      </Head>
       <Intro />
     </HomepageWrapper>
   )
