@@ -1,5 +1,5 @@
 import Intro from '@/widgets/intro/ui/intro'
-import HomepageWrapper from '@/widgets/hompeage-wrapper'
+import HomepageWrapper from '@/widgets/home-page-wrapper'
 
 export default function Home() {
   return (
