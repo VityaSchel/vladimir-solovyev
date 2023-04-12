@@ -1,4 +1,4 @@
-@mixin activeImage {
+@mixin highlightedImage {
   transform: scale(1.1);
   filter: grayscale(0);
 }
@@ -14,7 +14,10 @@
   flex: 1;
   height: 100%;
   overflow: hidden;
-  cursor: pointer;
+  
+  &.active {
+    cursor: pointer;
+  }
 
   img {
     object-fit: cover;
@@ -23,12 +26,12 @@
     filter: grayscale(1);
     -webkit-user-drag: none;
   
-    &.hover {
-      @include activeImage;
+    &.highlighted {
+      @include highlightedImage;
     }
   }
 
   &:focus-visible img {
-    @include activeImage;
+    @include highlightedImage;
   }
 }

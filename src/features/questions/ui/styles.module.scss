@@ -1,12 +1,13 @@
 @use '@/shared/styles/variables.scss' as variables;
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;
   flex: 1;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: variables.$breakpoint-table-smaller) {
     flex-direction: column;
   }
 
@@ -21,21 +22,81 @@
     text-shadow: 0 0 5px black, 0 0 1px black;
     font-style: italic;
     font-size: 2em;
-    transition: margin-left 200ms ease-in-out;
+    transition: margin 200ms ease-in-out;
     width: 70%;
     font-family: serif; // 'Montserrat', sans-serif;
     pointer-events: none;
+    hyphens: auto;
 
-    &.slideLeft {
+    &.slideToHitler {
       margin-left: -50px;
     }
 
-    &.slideRight {
+    &.slideToSolovyev {
       margin-left: 50px;
+    }
+
+    &.answerIsHitler,
+    &.answerIsSolovyev {
+      font-size: 1.5em;
+      width: calc(50% - 10px*2);
+      margin: 0;
+      pointer-events: unset;
+      transition: none;
+      transform: unset;
+    }
+
+    &.answerIsHitler {
+      left:  10px;
+      right: unset;
+    }
+
+    &.answerIsSolovyev {
+      right: 10px;
+      left: unset;
     }
 
     @media screen and (max-width: variables.$breakpoint-tablet) {
       width: 90%;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-table-smaller) {
+      bottom: unset;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      margin-left: unset;
+
+        &.slideToHitler {
+          margin-left: unset;
+          margin-top: -50px;
+        }
+
+        &.slideToSolovyev {
+          margin-left: unset;
+          margin-top: 50px;
+        }
+
+        &.answerIsHitler,
+        &.answerIsSolovyev {
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          width: calc(100% - 10px*2);
+          margin: 0;
+          right: unset;
+        }
+
+        &.answerIsHitler {
+          margin-top: -100px;
+        }
+
+        &.answerIsSolovyev {
+          margin-top: 100px;
+        }
+    }
+
+    .button {
+      margin-top: 10px;
+      font-family: 'Montserrat', sans-serif;
     }
   }
 }
