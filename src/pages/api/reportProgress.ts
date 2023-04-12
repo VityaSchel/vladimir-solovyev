@@ -15,7 +15,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Response>
 ) {
-  await RequestSchema.validate(req.body)
+  const isValid = await RequestSchema.isValid(req.body)
+  if(!isValid) {
+    res.status(400).json({ ok: false, error: 'INVALID_DATA' })
+    return
+  }
+
   const body = req.body as Yup.InferType<typeof RequestSchema>
   if(body.correct > body.questions) {
     res.status(400).json({ ok: false, error: 'INVALID_DATA' })
