@@ -4,7 +4,9 @@ export default function Document() {
   return (
     <Html lang="ru">
       <Head>
-        <meta rel="description" content="Проверьте интуицию, сыграв в игру, где вам нужно угадать чья это цитата: Владимира Соловьева (журналист) или Адольфа Гитлера (политик)" />
+        <meta name="description" content="Проверьте интуицию, сыграв в игру, где вам нужно угадать чья это цитата: Владимира Соловьева (журналист) или Адольфа Гитлера (политик)" />
+        <meta name="keywords" content="Гитлер, Соловьев, игра">
+        <meta name="author" content="hloth">
         <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
