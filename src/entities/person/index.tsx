@@ -18,6 +18,7 @@ export function Person({ image, alt, highlighted, active, onHover, onSelect }: {
       disabled={!active}
     >
       <Image
+        placeholder='blur'
         className={cx({ [styles.highlighted]: highlighted })}
         src={image}
         alt={alt}
