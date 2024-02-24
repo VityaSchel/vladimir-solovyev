@@ -6,7 +6,7 @@
 
 [<img width="972" alt="image" src="https://user-images.githubusercontent.com/59040542/231555193-4a5d1e07-2f33-4206-88ac-e27f16c34c5b.png">](https://solovyev.netlify.app/)
 
-[:joystick: Сыграть в мою версию](https://solovyev.netlify.app/) &nbsp; • &nbsp; [:shipit: Посмотреть код моего друга](https://github.com/devio10/solovyev-or-hitler-react)
+[:joystick: Сыграть в мою версию](https://solovyev.netlify.app/) &nbsp; • &nbsp; [:shipit: Посмотреть код моего мужа](https://github.com/devio10/solovyev-or-hitler-react)
 
 ## Стек
 
